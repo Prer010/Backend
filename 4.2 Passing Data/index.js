@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
 var letters = req.body["fName"].length + req.body["lName"].length;
-html = `Your have ${letters} letters in your name`; 
+html = `You have ${letters} letters in your name`; 
 res.render("index.ejs" ,{ html })
 });
 
