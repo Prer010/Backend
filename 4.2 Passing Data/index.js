@@ -6,15 +6,13 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let html = "Enter your name here : ";
 app.get("/", (req, res) => {
-  res.render("index.ejs" ,{ html });
+  res.render("index.ejs");
 });
 
 app.post("/submit", (req, res) => {
 var letters = req.body["fName"].length + req.body["lName"].length;
-html = `You have ${letters} letters in your name`; 
-res.render("index.ejs" ,{ html })
+res.render("index.ejs" ,{ html : letters })
 });
 
 app.listen(port, () => {
